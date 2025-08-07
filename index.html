@@ -4,32 +4,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Free QR Code Generator - Create and download QR codes instantly. Perfect for links, WiFi, text, and more."/>
-  <meta name="keywords" content="QR code generator, free QR codes, create QR code, download QR code, QR code maker">
-  <meta name="author" content="QRQuick">
+  <meta name="description" content="Create and download high-quality QR codes instantly. Perfect for URLs, WiFi access, text messages, and more."/>
+  <meta name="keywords" content="Free QR code generator, instant QR code, download QR code, make QR code online, create QR code free"/>
+  <meta name="author" content="QRQuick"/>
   <title>QRQuick | Free QR Code Generator</title>
   <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <meta property="og:title" content="QRQuick | Free QR Code Generator"/>
+  <meta property="og:description" content="Create and download high-quality QR codes instantly."/>
+  <meta property="og:image" content="preview.jpg"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://yourusername.github.io/qrquick"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <h1>QRQuick</h1>
-    <p>Instant Free QR Code Generator</p>
+    <div class="container">
+      <h1>QRQuick</h1>
+      <p>Create and Download Free QR Codes Instantly</p>
+    </div>
   </header>
 
   <main>
-    <div class="form-container">
-      <input type="text" id="qrInput" placeholder="Enter URL, text, or WiFi info" />
-      <button onclick="generateQR()">Generate QR Code</button>
-    </div>
+    <div class="container">
+      <div class="card">
+        <h2>Generate Your QR Code</h2>
+        <input type="text" id="qrInput" placeholder="Enter URL, text, or WiFi info" />
+        <button onclick="generateQR()">Generate</button>
+        <div id="qrcode"></div>
+        <button id="downloadBtn" onclick="downloadQR()">Download</button>
+      </div>
 
-    <div id="qrcode"></div>
-    <button id="downloadBtn" onclick="downloadQR()">Download QR</button>
+      <section class="info">
+        <h2>What is a QR Code?</h2>
+        <p>QR codes are digital images that store data such as links, messages, or contact details. They’re used in marketing, WiFi access, and more. Our free tool lets you generate a QR code instantly — no login required.</p>
+      </section>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 QRQuick | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
-    <div class="ads">Ad space – coming soon</div>
+    <div class="container">
+      <p>© 2025 QRQuick | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+    </div>
   </footer>
 
   <script>
