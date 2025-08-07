@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Free QR Code Generator - Create and download QR codes instantly. Perfect for links, WiFi, text, and more."/>
+  <meta name="keywords" content="QR code generator, free QR codes, create QR code, download QR code, QR code maker">
+  <meta name="author" content="QRQuick">
+  <title>QRQuick | Free QR Code Generator</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>QRQuick</h1>
+    <p>Instant Free QR Code Generator</p>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <input type="text" id="qrInput" placeholder="Enter URL, text, or WiFi info" />
+      <button onclick="generateQR()">Generate QR Code</button>
+    </div>
+
+    <div id="qrcode"></div>
+    <button id="downloadBtn" onclick="downloadQR()">Download QR</button>
+  </main>
+
+  <footer>
+    <p>© 2025 QRQuick | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+    <div class="ads">Ad space – coming soon</div>
+  </footer>
+
+  <script>
+    let qr;
+    function generateQR() {
+      const container = document.getElementById('qrcode');
+      container.innerHTML = '';
+      const input = document.getElementById('qrInput').value;
+      if (!input.trim()) {
+        alert("Please enter text or URL");
+        return;
+      }
+      qr = new QRCode(container, {
+        text: input,
+        width: 256,
+        height: 256,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+      document.getElementById("downloadBtn").style.display = "inline-block";
+    }
+
+    function downloadQR() {
+      const img = document.querySelector('#qrcode img');
+      if (!img) return alert("Generate a QR code first");
+      const link = document.createElement('a');
+      link.href = img.src;
+      link.download = "qr-code.png";
+      link.click();
+    }
+  </script>
+</body>
+</html>
